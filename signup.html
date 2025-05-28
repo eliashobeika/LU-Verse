@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Universal.css">
+    </head>
+    <style>
+        .generalcontainer{
+            width: clamp(16rem, 80vw, 1000rem); 
+        }
+        header{
+            transition: transform 1s;
+        }
+    </style>
+    <body>
+        <div class="generalcontainer" id="signup-box">
+            <img class="ufo" src="images/editedimg-removebg-preview.png">
+            <span class="signinprompt">Already have an account? sign in</span> <a class="signinlink" href="signin.html">here</a>
+            <form id="signup">
+                <div id="Name and email">
+                    <label id="fullNameLabel">Enter your full name:</label>
+                    <br>
+                    <input type="text" id="FName" aria-labelledby="fullNameLabel" placeholder="First Name" required>
+                    <input type="text" id="LName" aria-labelledby="fullNameLabel" placeholder="Last Name" required>
+                    <br>
+                    <label for="email">Enter your UL mail: </label>
+                    <br>
+                    <input type="text" id="email" pattern=".*@st\.ul\.edu\.lb" placeholder="e.g. YourName@st.ul.edu.lb" required>
+                    <button type="button" id="sendbutton">Send</button>
+                    <span id="MailCheck"></span>
+                    <br>
+                </div>
+                <div id="PINbox">
+                    <label for="PIN">Enter the code we sent to your email: </label>
+                    <br>
+                    <input type="text" id="PIN" pattern="\d{4}" placeholder="e.g. 1234" required>  
+                    <button type="button" id="confirmbutton">Confirm</button> 
+                    <span id="PINResult"></span>
+                    <br>
+                </div>
+                <div id="Passbox">
+                    <label for="Password">Choose a password (8 characters min): </label>
+                    <br>
+                    <input type="password" id="Password" placeholder="SecretPass@123" minlength="8" required>
+                    <span id="LengthCheck"></span>
+                    <br>
+                    <label for="PasswordConfirm">Confirm your password: </label>
+                    <br>
+                    <input type="password" id="PasswordConfirm" placeholder="SecretPass@123" minlength="8" required>
+                    <span id="MatchCheck"></span>
+                    <br>
+                </div>
+                <div id="notifications">
+                    <legend>Do you want us to notify you before classes start?</legend>
+                    <label><input type="radio" name="notify" value="yes" checked>Yes</label>
+                    <label><input type="radio" name="notify" value="no">No</label>
+                    <br>
+                    <button type="button" id="submitbutton">Submit</button>
+                </div>
+            </form>
+        </div>
+        <script src="signup.js"></script>
+    </body>
+</html>

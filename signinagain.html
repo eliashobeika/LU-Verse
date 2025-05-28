@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign In</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Universal.css">
+    </head>
+    <style>
+        .generalcontainer{
+            width: clamp(16rem, 80vw, 1000rem); 
+        }
+        header{
+            transition: transform 1s;
+        }
+    </style>
+    <body>
+        <header class="visible">
+            <nav>
+                <img class="dropdownmenu"src="images/menu-icon-png-3-lines-5.png" alt="Menu">
+                <ul>
+                    <li class="firstelement"><a class="ui" href="Schedule.html">Schedule</a></li>
+                    <li><a class="ui" href="News.html">News</a></li>
+                    <li><a class="ui" href="Resources.html">Resources</a></li>
+                    <li><a class="ui" href="Recap.html">Lecture Recap/ Assignments</a></li>
+                    <li class="lastelement"><a class="ui" href="Aboutus.html">About Us</a></li>
+                </ul>
+            </nav>
+            <h1>sign in</h1> <!--font doesnt support non breaking hyphens-->
+            <a class = "homebuttoncontainer" href="Main Page.html">
+                <img class = "homebuttonimg" src="images/homebutton.png" alt="Back to Home">
+            </a>
+        </header>
+        <div class="generalcontainer" id="signup-box">
+            <img class="ufo" src="images/editedimg-removebg-preview.png">
+            <span class="signinprompt">Don't have an account? Sign up</span> <a class="signinlink" href="signup.html">here</a>
+            <form id="signup">
+                <div id="Name and email">
+                    <label for="email">Enter your account's UL mail: </label>
+                    <br>
+                    <input type="text" id="email" pattern=".*@st\.ul\.edu\.lb" placeholder="e.g. YourName@st.ul.edu.lb" required>
+                    <br>
+                </div>
+                <div id="signinPassbox">
+                    <label for="Password">Enter your password (8 characters min): </label>
+                    <br>
+                    <input type="password" id="signinpassword" placeholder="SecretPass@123" minlength="8" required>
+                    <br>
+                    <button type="button" id="signinsubmitbutton">Submit</button>
+                    <span id="signinvalidity"></span>
+                </div>
+            </form>
+        </div>
+        <script src="signup.js"></script>
+    </body>
+</html>

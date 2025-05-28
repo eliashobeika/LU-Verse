@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>News</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Universal.css">
+        <style>
+            header.visible, header{
+                background-color:#212da0;
+            }
+            header{
+                transition: transform 1s;
+            }
+            body{
+                background: radial-gradient(#577BC1, #344CB7);
+            }
+            h1{
+                color:white;
+                text-shadow:
+                    -1px -1px 0 black, 
+                    1px -1px 0 black,  
+                    -1px 1px 0 black,  
+                     1px 1px 0 black;  
+            }
+            nav ul li{ 
+                background-color:#4343fff7;
+            }
+            nav ul li:hover{
+                background-color:#cec241f7;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="visible">
+            <nav>
+                <img class="dropdownmenu"src="images/menu-icon-png-3-lines-5.png" alt="Menu">
+                <ul>
+                    <li class="firstelement"><a class="ui" href="Schedule.html">Schedule</a></li>
+                    <li><a class="ui" href="News.html">News</a></li>
+                    <li><a class="ui" href="Resources.html">Resources</a></li>
+                    <li><a class="ui" href="Recap.html">Lecture Recap/ Assignments</a></li>
+                    <li class="lastelement"><a class="ui" href="Aboutus.html">About Us</a></li>
+                </ul>
+            </nav>
+            <h1>news</h1> <!--font doesnt support non breaking hyphens-->
+            <a class = "homebuttoncontainer" href="Main Page.html">
+                <img class = "homebuttonimg" src="images/homebutton.png" alt="Back to Home">
+            </a>
+        </header>
+        <div class="generalcontainer">
+            <details open>
+                <summary class="NewsTitle">Administrative News</summary>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/admin-logo.jpg" alt="Administrative news">
+                    <p>The administration office will operate as usual next week from January 13 to January 20, between 9:00am and 2:00pm.
+                        <br>
+                        <span class="NewsDate">Sent on: 11:49pm 12/01/2025</span>
+                    </p>
+                </div>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/admin-logo.jpg" alt="Administrative news">
+                    <p>The administration office will be closed from Wednesday January 8 to Friday January 10.
+                        <br>
+                        <span class="NewsDate">Sent on: 9:37am 7/01/2025</span>
+                    </p>
+                </div>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/admin-logo.jpg" alt="Administrative news">
+                    <p>Admissions close on December 14th. Make sure to submit all your paperwork before the deadline!
+                        <br>
+                        <span class="NewsDate">Sent on: 6:16am 28/11/2025</span>
+                    </p>
+                </div>
+              </details>
+              <details open>
+                <summary class="NewsTitle">Schedule updates <span class="NewsDate">(class specific)</span></summary>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/Cancelled-logo.png" alt="Schedule Update cancelled class">
+                    <p>Today's I2201 lecture (Thursday 9 January, 4:00pm-?) is cancelled. 
+                    <br>
+                    <span class="NewsDate">Sent on: 3:51pm 9/01/2025</span>
+                    </p>
+                </div>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/postponed-logo.png" alt="Schedule update postponed class">
+                    <p>Today's I2201 lecture (Thursday 9 January, 1:30pm-3:30) is postponed to 4:00pm and will be online.
+                    <br>
+                    <span class="NewsDate">Sent on: 1:32pm 9/01/2025</span>
+                    </p>
+                </div>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/extra-course-logo.png" alt="Schedule update extra class">
+                    <p>
+                        Dr Ibtissam will give an extra I2204 lecture tomorrow (Monday 6 January, 8:00am to 9:30am)
+                        <br>
+                        <span class="NewsDate">Sent on: 9:44pm 5/01/2025</span>
+                    </p>
+                </div>
+              </details>
+              <details open>
+                <summary class="NewsTitle">Event announcements</summary>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/merry-christmas-logo.png!sw800" alt="Christmas Event 2024">
+                    <p>A Christmas Mass will be held at the Faculty Theater on December 20 at 10:00 AM.
+                        <br>
+                        <span class="NewsDate">Sent on: 3:21pm 12/12/2025</span>
+                    </p>
+                </div>
+                <div class="NewsSegment">
+                    <img class="NewsPic" src="images/brain-training-logo.png" alt="Brain and Fitness Event">
+                    <p>Brain workouts and fitness tests in front of the committee's office on December 19 at 10:00 AM.
+                        <br>
+                        <span class="NewsDate">Sent on: 6:51pm 5/12/2025</span>
+                    </p>
+                </div>
+        </div>
+        <script src="Universal.js"></script>
+    </body>
+</html>

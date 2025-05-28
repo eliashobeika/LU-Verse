@@ -1,0 +1,544 @@
+@font-face {
+    font-family: "Space-font";
+    src: url("fonts/StarJedi-DGRW.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Quote-font";
+    src: url("fonts/AlcanteraSerif-gx4jp.woff") format("woff");
+}
+
+@font-face {
+    font-family: "UI-font";
+    src: url("fonts/Roboto-VariableFont.woff") format("woff");
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+.no-transition * {
+    transition: none !important;
+}
+
+body{
+    background: radial-gradient(#7A1CAC, #2E073F);
+    height: 100vh;
+    font-size:clamp(1rem,1.4vw,5rem); 
+    font-family:"UI-font";
+}
+
+/*header section*/
+header {
+    opacity:1;
+    z-index:1;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position:fixed;
+    width:100vw;
+    background-color: #AD49E1;
+    border-top-left-radius: 0; 
+    border-top-right-radius: 0; 
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px; 
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: transform 3s ease-out;
+    max-height:5rem;
+}
+
+header.visible {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+h1{
+    font-family: "Space-font";
+    font-size:clamp(1.2rem, 3vw + 1.5vh ,12rem);
+    color:#000000;
+    margin-bottom:clamp(0.5rem,2%,0.8rem); 
+    text-align: center;
+    width:80%;
+}
+
+.no-break {
+    white-space: nowrap; /* Prevents the word "lu-verse" from breaking at hyphen */
+}
+
+.dropdownmenu{
+    width:100%;
+    height:100%;
+}
+
+nav{
+    margin-right: 10px;
+    margin-left: 10px;
+    flex:1;
+    max-width:4rem; /*no need for height cuz flexbox respects aspect ratio ig idk*/
+    min-width:3rem;
+    -webkit-tap-highlight-color: transparent; /*for mobile clicks again*/
+    cursor:pointer;  
+}
+
+nav ul{
+    opacity:0;
+    list-style: none;
+    position:absolute;
+    z-index:1;
+    transition:0.4s;
+    cursor:pointer;
+    visibility:hidden; /*we need opacity for transitions and visibility for preventing nav appearing when hovering on the whole nov*/
+}
+
+nav:hover ul{
+    opacity:1;
+    position: absolute;
+    padding-top:2vh;
+    border-radius:20px;
+    visibility: visible;
+}
+
+nav ul li{ 
+    background-color:#ebd3f8f8;
+    border-style:solid;
+    border-width: 0.1rem;
+    border-color:black;
+    border-bottom: 0rem;
+    width:15vw;
+    height:10vh;
+    transition:0.3s;
+}
+
+nav ul li.firstelement{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+
+nav ul li.lastelement{
+    border-bottom: 0.1rem solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+}
+
+nav ul li:hover{
+    background-color:rgba(137, 84, 186, 0.979);
+}
+
+.pfp{
+    width: 100%;
+    height: 100%;
+}
+
+nav ul.accountlist{
+    right:10px;
+}
+
+nav ul li.firstelementacc{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+
+nav ul li.lastelementacc{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+}
+
+a.ui{
+    display:flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    text-decoration: none;
+    color: inherit;
+    width:100%;
+    height:100%;
+}
+
+/*rest of main page*/
+
+#Quoteoftheday{
+    opacity:0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    font-family: "Quote-font";
+    font-size:clamp(2rem,3vh + 3vw,12rem); 
+    text-align:center;
+    z-index:-1;
+    width:90%;
+    color:rgb(255, 255, 255);
+    transition: 2s;
+    transition-delay: 3s;
+}
+
+/*mobile nav bar*/
+
+@media only screen and (max-width:768px){
+    nav ul{
+        position:absolute;
+        top:0%;
+        flex-direction: column; 
+        height: 100vh;
+        width:70vw;
+        font-size:clamp(1rem,7vw,3rem);
+    }
+
+    nav ul li{
+        height:20%;
+        width:100%;
+        margin-left:-10px;
+    }
+    
+    nav ul li.firstelement{
+        height:20%;
+        width:100%;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px; 
+    }
+    
+    nav ul li.lastelement{
+        height:20%;
+        width:100%;
+        border-bottom: 0.1rem solid black;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px; 
+    }
+
+    nav ul li.accountitem{
+        height:20%;
+        width:100%;
+        margin-left:10px;
+      }
+
+    nav ul li.firstelementacc{
+        margin-left:10px;
+        height:20%;
+        width:100%;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px; 
+    }
+
+    nav ul li.lastelementacc{
+        margin-left:10px;
+        height:20%;
+        width:100%;
+        border-bottom: 0.1rem solid black;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px; 
+    }
+    nav:hover ul{
+        opacity:1;
+        position: absolute;
+        padding-top:0vh;
+        border-radius:20px;
+        visibility: visible;
+    }
+}
+
+/*Signup page*/
+
+.signinprompt{
+    font-size:clamp(0.7rem,1vw,4rem); 
+    font-style:italic;
+}
+
+.signinlink{
+    color:blue;
+    font-style:italic;
+    font-size:clamp(0.7rem,1vw,4rem); 
+}
+
+.ufo{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    height:clamp(6rem,10vh + 10vw,20rem);
+    width:auto;
+    margin-bottom:1rem;
+}
+
+#signup{
+    line-height: clamp(1.5rem,4vh,2rem);
+}
+
+#Fname{
+    width:clamp(5rem,20%,25rem);
+}
+
+#Lname{
+    width:clamp(5rem,20%,25rem);
+}
+
+#email{
+    width:clamp(11rem,40%, 50rem);
+}
+
+#PIN{
+    width:clamp(5rem,20%,25rem);
+}
+
+#Password, #PasswordConfirm{
+    width:clamp(8rem,20%,25rem);
+}
+
+#PINbox{
+    visibility:hidden;
+    pointer-events: none;
+}
+
+#Passbox{
+    visibility:hidden;
+    pointer-events: none;
+}
+
+#notifications{
+    visibility:hidden;
+    pointer-events: none;
+}
+
+/*signin*/
+
+/*News*/
+
+.generalcontainer{
+    padding-left: 2%;
+    background-color:rgba(245, 245, 245, 0.83);
+    position:absolute;
+    left:50%;
+    width: clamp(14rem, 90vw, 1000rem); /*clamp so we can use more screen on small devices*/
+    height:auto;
+    border-radius: 20px;
+    padding-top:1rem;
+    padding-bottom:1rem;
+    overflow-y: auto;
+    opacity:1;
+}
+
+.homebuttonimg{
+    width:100%;
+    height:100%;
+}
+
+.homebuttoncontainer{
+    flex:1;
+    max-width:4.5rem;
+    min-width:3rem;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:5px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.NewsTitle{
+    font-size:clamp(1.5rem,2.4vw,8rem); 
+    margin-bottom:10px;
+}
+
+.NewsSegment{
+    display: flex; 
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.NewsPic{
+    width:clamp(4rem,6vw,8rem);
+    height:clamp(4rem,6vw,8rem);
+    margin-right:20px;
+    margin-top: 5px;
+}
+
+.NewsDate{
+    font-size:clamp(0.8rem,1vw,1.4rem); 
+    font-style: italic;
+}
+
+/*lecture recap/assignment page*/
+
+.subject{
+    font-weight: bold;
+    font-size:clamp(2rem,2.8vw,10rem); 
+    margin-right:10px;
+    text-wrap: nowrap;
+}
+
+.allrecaps{
+    display:inline-block;
+    height: 17rem;
+    overflow-y: scroll;
+    padding-right:15px;
+}
+
+/*resources*/
+
+.titlesection{
+    font-size:clamp(1.5rem,2vw,8rem); 
+    margin-left:1rem;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+}
+  
+.image-container img {
+    width:100%;
+    height:100%;
+}
+
+.legend{
+    text-align:center;
+    text-decoration:none;
+    color: black;
+    width:clamp(6rem,15vw,20rem);
+    margin:clamp(1rem,5vw,8rem);
+    /*text*/
+    font-style:italic;
+    font-size:clamp(1rem,1.4vw,5rem); 
+    font-family:"UI-font";
+}
+
+.legendTitle{
+    text-align:center;
+    text-decoration:none;
+    color: black;
+    width:clamp(6rem,15vw,20rem);
+    margin:clamp(1rem,5vw,8rem);
+    font-style:bold;
+    font-size:clamp(1.2rem,1.6vw,6rem); 
+    font-family:"UI-font";
+}
+
+/*Schedule*/
+
+.tablebody{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scheduleh1{
+    font-family: 'UI-font';
+    text-align: center;
+    color: #E94560;
+    padding-bottom: 5px;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: clamp(0.125rem,1vw,0.3rem);
+    text-align: center;
+    border: 1px solid #E94560; 
+    font-size: clamp(0.5rem,1vw + 0.5vh,1rem);
+}
+
+th {
+    background-color: #16213E; 
+    color: #E94560; 
+}
+
+td {
+    background-color: rgba(26, 26, 46, 0.9); 
+    transition: all 0.3s ease; 
+}
+
+td:hover {
+    background-color: #E94560;
+    color: #1A1A2E; 
+    transform: scale(1.1); 
+    cursor: pointer;
+}
+
+/*account info*/
+
+.horizontalflex{
+    display: flex;
+    justify-content: space-evenly;
+    line-height: 2.2rem;
+    gap:1rem;
+}
+
+.smalltitle{
+    font-size: inherit; 
+    font-weight: bolder; 
+    line-height: normal;
+    color: inherit;
+    font-size:clamp(1.3rem,1.8vw,6rem); 
+}
+
+/*aboutus*/
+
+.bigtitle{
+    font-size: inherit;
+    font-weight: bolder;
+    line-height: normal;
+    color: inherit;
+    font-size:clamp(2rem,2.2vw,10rem); 
+    font-family: "Space-font";
+    font-size:clamp(1.2rem, 3vw + 1.5vh ,12rem);
+    color:#000000;
+    margin-bottom:clamp(0.5rem,2%,0.8rem); 
+}
+
+.profile{
+    width: clamp(6rem, 40%, 30rem);
+    height: clamp(6rem, 80%, 30rem);
+    border-radius: 50%;
+}
+
+/*stars*/
+
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+  
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+  
+.stars::before, .stars::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 2s infinite;
+}
+  
+.stars::before {
+    top: 20%;
+    left: 30%;
+    width: 2px;
+    height: 2px;
+    animation-delay: 0.5s;
+}
+  
+.stars::after {
+    top: 50%;
+    left: 70%;
+    width: 3px;
+    height: 3px;
+    animation-delay: 1s;
+}
+  
