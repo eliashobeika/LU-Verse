@@ -10,3 +10,5 @@ I still have a lot to learn, especially in design. For example, I regret not tak
 
 Note: The PDF links on the I2202 pages are broken because I don’t have permission to share my teacher’s course materials.
 Also, we only made an I2202 page, as replicating that for other courses was unnecessary.
+
+Check it out here: https://github.com/eliashobeika/LU-Verse/blob/main/Main%20Page.html
